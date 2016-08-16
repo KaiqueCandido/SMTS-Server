@@ -15,41 +15,40 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import students.trasnaport.manager.system.smts.entity.Aluno;
 import students.trasnaport.manager.system.smts.entity.Login;
+import students.trasnaport.manager.system.smts.entity.Motorista;
 import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
-import students.trasnaport.manager.system.smts.service.ServiceAluno;
+import students.trasnaport.manager.system.smts.service.ServiceMotorista;
 
 /**
  *
  * @author kaiqu
  */
 @Stateless
-@Path(value = "aluno")
-public class WebServiceAluno {
+@Path(value = "motorista")
+public class WebServiceMotorista {
 
     @EJB
-    private ServiceAluno serviceAluno;
+    private ServiceMotorista serviceMotorista;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addAluno(Aluno aluno) {
-        serviceAluno.addAluno(aluno);
+    public void addMotorista(Motorista motorista) {
+        serviceMotorista.addMotorista(motorista);
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Aluno> listAlunos() {
-        return serviceAluno.listarAlunos();
+    public List<Motorista> listMotorista() {
+        return serviceMotorista.listarMotoristas();
     }
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Aluno addAluno() {
-        Aluno aluno = new Aluno("20122201.10335", 0, "Kaique", "Candido", 22, "3.702.902", "097.507.454-77", new Login("kaique25_ci@hotmail.com", "123456"), Tipo_De_Pessoa.ALUNO);
-        serviceAluno.addAluno(aluno);
-        return aluno;
+    public Motorista addMotorista() {
+        Motorista motorista = new Motorista("123564322", "Judivan", "Henrrique", 40, "1.234.432", "123.345.567-88", new Login("judivan", "123"), Tipo_De_Pessoa.MOTORISTA);
+        serviceMotorista.addMotorista(motorista);
+        return motorista;
 
     }
 }

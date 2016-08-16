@@ -8,7 +8,7 @@ import students.trasnaport.manager.system.smts.entity.Aluno;
 import students.trasnaport.manager.system.smts.entity.Motorista;
 import students.trasnaport.manager.system.smts.entity.PontoDeParada;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-08-04T11:20:20")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-08-16T11:24:38")
 @StaticMetamodel(Veiculo.class)
 public class Veiculo_ { 
 

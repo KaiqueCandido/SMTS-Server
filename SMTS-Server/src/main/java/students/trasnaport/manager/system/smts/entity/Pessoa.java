@@ -6,12 +6,15 @@
 package students.trasnaport.manager.system.smts.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
+import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
 
 /**
  *
@@ -29,25 +32,32 @@ public class Pessoa implements Serializable {
     private int idade;
     private String rg;
     private String cpf;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Login login;
+    private Tipo_De_Pessoa tipo;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String sobreNome, int idade, String rg, String cpf) {
+    public Pessoa(String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.idade = idade;
         this.rg = rg;
         this.cpf = cpf;
+        this.login = login;
+        this.tipo = tipo;
     }
 
-    public Pessoa(long id, String nome, String sobreNome, int idade, String rg, String cpf) {
+    public Pessoa(long id, String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
         this.id = id;
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.idade = idade;
         this.rg = rg;
         this.cpf = cpf;
+        this.login = login;
+        this.tipo = tipo;
     }
 
     public long getId() {
@@ -96,6 +106,27 @@ public class Pessoa implements Serializable {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    public Tipo_De_Pessoa getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo_De_Pessoa tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", sobreNome=" + sobreNome + ", idade=" + idade + ", rg=" + rg + ", cpf=" + cpf + ", login=" + login + ", tipo=" + tipo + '}';
     }
 
 }

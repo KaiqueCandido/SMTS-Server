@@ -8,6 +8,7 @@ package students.trasnaport.manager.system.smts.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
 
 /**
  *
@@ -22,13 +23,13 @@ public class Motorista extends Pessoa implements Serializable {
     public Motorista() {
     }
 
-    public Motorista(String nome, String sobreNome, int idade, String rg, String cpf, String cnh) {
-        super(nome, sobreNome, idade, rg, cpf);
+    public Motorista(String cnh, String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
+        super(nome, sobreNome, idade, rg, cpf, login, tipo);
         this.cnh = cnh;
     }
 
-    public Motorista(long id, String nome, String sobreNome, int idade, String rg, String cpf, String cnh) {
-        super(id, nome, sobreNome, idade, rg, cpf);
+    public Motorista(String cnh, long id, String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
+        super(id, nome, sobreNome, idade, rg, cpf, login, tipo);
         this.cnh = cnh;
     }
 

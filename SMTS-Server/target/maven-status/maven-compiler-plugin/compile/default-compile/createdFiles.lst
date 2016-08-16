@@ -1,6 +1,9 @@
+students\trasnaport\manager\system\smts\server\WebServiceServer.class
 students\trasnaport\manager\system\smts\entity\Motorista_.class
 org\netbeans\rest\application\config\ApplicationConfig.class
+students\trasnaport\manager\system\smts\entity\Login_.class
 students\trasnaport\manager\system\smts\serviceimpl\ServiceVeiculoImpl.class
+students\trasnaport\manager\system\smts\enums\Tipo_De_Pessoa.class
 students\trasnaport\manager\system\smts\serviceimpl\ServiceMotoristaImpl.class
 students\trasnaport\manager\system\smts\dao\MotoristaDao.class
 students\trasnaport\manager\system\smts\entity\Aluno.class
@@ -13,10 +16,15 @@ students\trasnaport\manager\system\smts\entity\Veiculo.class
 students\trasnaport\manager\system\smts\service\ServiceMotorista.class
 students\trasnaport\manager\system\smts\entity\PontoDeParada_.class
 students\trasnaport\manager\system\smts\enums\Tipo_De_Veiculos.class
+students\trasnaport\manager\system\smts\server\WebServiceMotorista.class
 students\trasnaport\manager\system\smts\entity\Ponto_.class
 students\trasnaport\manager\system\smts\service\ServicePontoDeParada.class
 students\trasnaport\manager\system\smts\dao\AlunoDao.class
+students\trasnaport\manager\system\smts\dao\ServiceDao.class
 students\trasnaport\manager\system\smts\entity\Veiculo_.class
+students\trasnaport\manager\system\smts\service\ServiceServer.class
+students\trasnaport\manager\system\smts\entity\Login.class
+students\trasnaport\manager\system\smts\serviceimpl\ServiceServerImpl.class
 students\trasnaport\manager\system\smts\entity\Pessoa.class
 students\trasnaport\manager\system\smts\entity\Ponto.class
 students\trasnaport\manager\system\smts\server\WebServiceAluno.class
