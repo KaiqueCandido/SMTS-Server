@@ -10,8 +10,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import students.trasnaport.manager.system.smts.entity.Aluno;
-import students.trasnaport.manager.system.smts.entity.Motorista;
 import students.trasnaport.manager.system.smts.entity.Pessoa;
 
 /**
