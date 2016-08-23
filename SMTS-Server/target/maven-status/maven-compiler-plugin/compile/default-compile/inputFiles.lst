@@ -22,6 +22,8 @@ C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\ma
 C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\serviceimpl\ServiceVeiculoImpl.java
 C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\dao\ServiceDao.java
 C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\entity\PontoDeParada.java
+C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\server\WebServicePontoDeParada.java
+C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\server\WebServiceVeiculo.java
 C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\serviceimpl\ServiceMotoristaImpl.java
 C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\server\WebServiceAluno.java
 C:\Users\kaiqu\OneDrive\Documentos\NetBeansProjectsLocal\SMTS\SMTS-Server\src\main\java\students\trasnaport\manager\system\smts\entity\Login.java

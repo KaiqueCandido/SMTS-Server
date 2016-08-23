@@ -28,7 +28,7 @@ public class PontoDeParada implements Serializable {
     private String nome;
     private String descricao;
     private String referencia;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Ponto ponto;
 
     public PontoDeParada() {

@@ -6,6 +6,7 @@
 package students.trasnaport.manager.system.smts.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
@@ -19,18 +20,22 @@ import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
 public class Motorista extends Pessoa implements Serializable {
 
     private String cnh;
+    @ManyToMany(mappedBy = "motoristas", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Veiculo> veiculos;
 
     public Motorista() {
     }
 
-    public Motorista(String cnh, String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
-        super(nome, sobreNome, idade, rg, cpf, login, tipo);
+    public Motorista(String cnh, List<Veiculo> veiculos, String nome, String sobreNome, int idade, String rg, String cpf, Tipo_De_Pessoa tipo, String avatar, Login login) {
+        super(nome, sobreNome, idade, rg, cpf, tipo, avatar, login);
         this.cnh = cnh;
+        this.veiculos = veiculos;
     }
 
-    public Motorista(String cnh, long id, String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
-        super(id, nome, sobreNome, idade, rg, cpf, login, tipo);
+    public Motorista(String cnh, List<Veiculo> veiculos, long id, String nome, String sobreNome, int idade, String rg, String cpf, Tipo_De_Pessoa tipo, String avatar, Login login) {
+        super(id, nome, sobreNome, idade, rg, cpf, tipo, avatar, login);
         this.cnh = cnh;
+        this.veiculos = veiculos;
     }
 
     public String getCnh() {
@@ -39,6 +44,14 @@ public class Motorista extends Pessoa implements Serializable {
 
     public void setCnh(String cnh) {
         this.cnh = cnh;
+    }
+
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
     }
 
 }

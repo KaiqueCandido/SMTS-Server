@@ -9,9 +9,11 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -27,29 +29,32 @@ public class Veiculo implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String placa;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    private int qtdeAssentos;
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private List<PontoDeParada> ponstosDeParada;
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Motorista> motoristas;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "veiculo", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Aluno> alunos;
-    @OneToMany
-    private List<PontoDeParada> rota;
 
     public Veiculo() {
     }
 
-    public Veiculo(String placa, List<Motorista> motoristas, List<Aluno> alunos, List<PontoDeParada> rota) {
+    public Veiculo(String placa, int qtdeAssentos, List<PontoDeParada> ponstosDeParada, List<Motorista> motoristas, List<Aluno> alunos) {
         this.placa = placa;
+        this.qtdeAssentos = qtdeAssentos;
+        this.ponstosDeParada = ponstosDeParada;
         this.motoristas = motoristas;
         this.alunos = alunos;
-        this.rota = rota;
     }
 
-    public Veiculo(long id, String placa, List<Motorista> motoristas, List<Aluno> alunos, List<PontoDeParada> rota) {
+    public Veiculo(long id, String placa, int qtdeAssentos, List<PontoDeParada> ponstosDeParada, List<Motorista> motoristas, List<Aluno> alunos) {
         this.id = id;
         this.placa = placa;
+        this.qtdeAssentos = qtdeAssentos;
+        this.ponstosDeParada = ponstosDeParada;
         this.motoristas = motoristas;
         this.alunos = alunos;
-        this.rota = rota;
     }
 
     public long getId() {
@@ -68,6 +73,22 @@ public class Veiculo implements Serializable {
         this.placa = placa;
     }
 
+    public int getQtdeAssentos() {
+        return qtdeAssentos;
+    }
+
+    public void setQtdeAssentos(int qtdeAssentos) {
+        this.qtdeAssentos = qtdeAssentos;
+    }
+
+    public List<PontoDeParada> getPonstosDeParada() {
+        return ponstosDeParada;
+    }
+
+    public void setPonstosDeParada(List<PontoDeParada> ponstosDeParada) {
+        this.ponstosDeParada = ponstosDeParada;
+    }
+
     public List<Motorista> getMotoristas() {
         return motoristas;
     }
@@ -82,14 +103,6 @@ public class Veiculo implements Serializable {
 
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
-    }
-
-    public List<PontoDeParada> getRota() {
-        return rota;
-    }
-
-    public void setRota(List<PontoDeParada> rota) {
-        this.rota = rota;
     }
 
 }

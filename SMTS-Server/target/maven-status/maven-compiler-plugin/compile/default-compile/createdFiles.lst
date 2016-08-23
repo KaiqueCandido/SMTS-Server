@@ -24,8 +24,10 @@ students\trasnaport\manager\system\smts\dao\ServiceDao.class
 students\trasnaport\manager\system\smts\entity\Veiculo_.class
 students\trasnaport\manager\system\smts\service\ServiceServer.class
 students\trasnaport\manager\system\smts\entity\Login.class
+students\trasnaport\manager\system\smts\server\WebServiceVeiculo.class
 students\trasnaport\manager\system\smts\serviceimpl\ServiceServerImpl.class
 students\trasnaport\manager\system\smts\entity\Pessoa.class
+students\trasnaport\manager\system\smts\server\WebServicePontoDeParada.class
 students\trasnaport\manager\system\smts\entity\Ponto.class
 students\trasnaport\manager\system\smts\server\WebServiceAluno.class
 students\trasnaport\manager\system\smts\dao\PontoDeParadaDao.class

@@ -32,32 +32,35 @@ public class Pessoa implements Serializable {
     private int idade;
     private String rg;
     private String cpf;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Login login;
     private Tipo_De_Pessoa tipo;
+    private String avatar;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Login login;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
+    public Pessoa(String nome, String sobreNome, int idade, String rg, String cpf, Tipo_De_Pessoa tipo, String avatar, Login login) {
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.idade = idade;
         this.rg = rg;
         this.cpf = cpf;
-        this.login = login;
         this.tipo = tipo;
+        this.avatar = avatar;
+        this.login = login;
     }
 
-    public Pessoa(long id, String nome, String sobreNome, int idade, String rg, String cpf, Login login, Tipo_De_Pessoa tipo) {
+    public Pessoa(long id, String nome, String sobreNome, int idade, String rg, String cpf, Tipo_De_Pessoa tipo, String avatar, Login login) {
         this.id = id;
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.idade = idade;
         this.rg = rg;
         this.cpf = cpf;
-        this.login = login;
         this.tipo = tipo;
+        this.avatar = avatar;
+        this.login = login;
     }
 
     public long getId() {
@@ -108,14 +111,6 @@ public class Pessoa implements Serializable {
         this.cpf = cpf;
     }
 
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
     public Tipo_De_Pessoa getTipo() {
         return tipo;
     }
@@ -124,9 +119,20 @@ public class Pessoa implements Serializable {
         this.tipo = tipo;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", sobreNome=" + sobreNome + ", idade=" + idade + ", rg=" + rg + ", cpf=" + cpf + ", login=" + login + ", tipo=" + tipo + '}';
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
     }
 
 }

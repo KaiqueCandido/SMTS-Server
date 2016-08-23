@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import students.trasnaport.manager.system.smts.entity.Login;
 import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-08-16T11:24:38")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-08-23T11:00:41")
 @StaticMetamodel(Pessoa.class)
 public class Pessoa_ { 
 
