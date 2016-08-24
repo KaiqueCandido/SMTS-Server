@@ -5,7 +5,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import students.trasnaport.manager.system.smts.entity.Ponto;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-08-23T11:00:41")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-08-23T21:33:06")
 @StaticMetamodel(PontoDeParada.class)
 public class PontoDeParada_ { 
 

@@ -7,12 +7,15 @@ students\trasnaport\manager\system\smts\enums\Tipo_De_Pessoa.class
 students\trasnaport\manager\system\smts\serviceimpl\ServiceMotoristaImpl.class
 students\trasnaport\manager\system\smts\dao\MotoristaDao.class
 students\trasnaport\manager\system\smts\entity\Aluno.class
+students\trasnaport\manager\system\smts\entity\Administrador_.class
 students\trasnaport\manager\system\smts\serviceimpl\ServicePontoDeParadaImpl.class
 students\trasnaport\manager\system\smts\entity\Aluno_.class
 students\trasnaport\manager\system\smts\entity\Motorista.class
 students\trasnaport\manager\system\smts\entity\PontoDeParada.class
+students\trasnaport\manager\system\smts\entity\Empresa.class
 students\trasnaport\manager\system\smts\service\ServiceAluno.class
 students\trasnaport\manager\system\smts\entity\Veiculo.class
+students\trasnaport\manager\system\smts\entity\Administrador.class
 students\trasnaport\manager\system\smts\service\ServiceMotorista.class
 students\trasnaport\manager\system\smts\entity\PontoDeParada_.class
 students\trasnaport\manager\system\smts\enums\Tipo_De_Veiculos.class
@@ -23,6 +26,7 @@ students\trasnaport\manager\system\smts\dao\AlunoDao.class
 students\trasnaport\manager\system\smts\dao\ServiceDao.class
 students\trasnaport\manager\system\smts\entity\Veiculo_.class
 students\trasnaport\manager\system\smts\service\ServiceServer.class
+students\trasnaport\manager\system\smts\entity\Empresa_.class
 students\trasnaport\manager\system\smts\entity\Login.class
 students\trasnaport\manager\system\smts\server\WebServiceVeiculo.class
 students\trasnaport\manager\system\smts\serviceimpl\ServiceServerImpl.class

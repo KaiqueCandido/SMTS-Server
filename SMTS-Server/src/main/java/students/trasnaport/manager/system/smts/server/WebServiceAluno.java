@@ -18,6 +18,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import students.trasnaport.manager.system.smts.entity.Aluno;
 import students.trasnaport.manager.system.smts.entity.Login;
+import students.trasnaport.manager.system.smts.entity.Motorista;
+import students.trasnaport.manager.system.smts.entity.PontoDeParada;
 import students.trasnaport.manager.system.smts.entity.Veiculo;
 import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
 import students.trasnaport.manager.system.smts.service.ServiceAluno;
@@ -47,8 +49,8 @@ public class WebServiceAluno {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Aluno addAluno() {        
-        Aluno aluno = new Aluno("20122201.10335", new ArrayList<Veiculo>(), "Girlene", "Alves", 22, "3.702.902", "097.507.454-77", new Login("girlene", "123"), Tipo_De_Pessoa.ALUNO);
+    public Aluno addAluno() {
+        Aluno aluno = new Aluno("20122201.10335", "Kaique", "Candido", 22, "3.702.902", "097.507.454-77", Tipo_De_Pessoa.ALUNO, "Avatar", new Login("kaique", "123"));
         serviceAluno.addAluno(aluno);
         return aluno;
 

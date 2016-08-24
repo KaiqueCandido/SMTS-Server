@@ -6,6 +6,7 @@
 package students.trasnaport.manager.system.smts.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -31,25 +32,25 @@ public class Administrador implements Serializable {
     private long id;
     @OneToOne(cascade = CascadeType.PERSIST)
     private Login login;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private Prefeitura prefeitura;
-    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<Pessoa> administradores;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Empresa prefeitura;
 
     public Administrador() {
     }
 
-    public Administrador(Login login, Prefeitura prefeitura, List<Pessoa> administradores) {
+    public Administrador(Login login, Empresa prefeitura) {
         this.login = login;
         this.prefeitura = prefeitura;
-        this.administradores = administradores;
+        this.administradores = new ArrayList<>();
     }
 
-    public Administrador(long id, Login login, Prefeitura prefeitura, List<Pessoa> administradores) {
+    public Administrador(long id, Login login, Empresa prefeitura) {
         this.id = id;
         this.login = login;
         this.prefeitura = prefeitura;
-        this.administradores = administradores;
+        this.administradores = new ArrayList<>();
     }
 
     public long getId() {
@@ -68,11 +69,11 @@ public class Administrador implements Serializable {
         this.login = login;
     }
 
-    public Prefeitura getPrefeitura() {
+    public Empresa getPrefeitura() {
         return prefeitura;
     }
 
-    public void setPrefeitura(Prefeitura prefeitura) {
+    public void setPrefeitura(Empresa prefeitura) {
         this.prefeitura = prefeitura;
     }
 
@@ -82,6 +83,18 @@ public class Administrador implements Serializable {
 
     public void setAdministradores(List<Pessoa> administradores) {
         this.administradores = administradores;
+    }
+
+    public boolean addAdministrador(Pessoa pessoa) {
+        this.administradores.add(pessoa);
+        return true;
+    }
+
+    public boolean removeAdministrador(Pessoa pessoa) {
+        if (this.administradores.contains(pessoa)) {
+            this.administradores.remove(pessoa);
+        }
+        return true;
     }
 
 }

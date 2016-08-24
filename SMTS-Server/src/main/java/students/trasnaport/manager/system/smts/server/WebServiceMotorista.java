@@ -5,6 +5,8 @@
  */
 package students.trasnaport.manager.system.smts.server;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -15,8 +17,10 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import students.trasnaport.manager.system.smts.entity.Aluno;
 import students.trasnaport.manager.system.smts.entity.Login;
 import students.trasnaport.manager.system.smts.entity.Motorista;
+import students.trasnaport.manager.system.smts.entity.PontoDeParada;
 import students.trasnaport.manager.system.smts.entity.Veiculo;
 import students.trasnaport.manager.system.smts.enums.Tipo_De_Pessoa;
 import students.trasnaport.manager.system.smts.service.ServiceMotorista;
@@ -47,7 +51,7 @@ public class WebServiceMotorista {
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     public Motorista addMotorista() {
-        Motorista motorista = new Motorista("123564322", new Veiculo(), "Judivan", "Henrrique", 40, "1.234.432", "123.345.567-88", new Login("judivan", "123"), Tipo_De_Pessoa.MOTORISTA);
+        Motorista motorista = new Motorista("123564322", "Judivan", "Henrrique", 40, "1.234.432", "123.345.567-88", Tipo_De_Pessoa.MOTORISTA, "Avatar", new Login("judivan", "123"));
         serviceMotorista.addMotorista(motorista);
         return motorista;
 

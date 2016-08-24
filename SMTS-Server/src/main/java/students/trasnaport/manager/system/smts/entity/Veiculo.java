@@ -6,6 +6,7 @@
 package students.trasnaport.manager.system.smts.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -30,31 +31,37 @@ public class Veiculo implements Serializable {
     private long id;
     private String placa;
     private int qtdeAssentos;
+
+    //Pontos de parada do veiculo
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<PontoDeParada> ponstosDeParada;
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+
+    //Motoristas que dirigem esse onibus
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Motorista> motoristas;
-    @OneToMany(mappedBy = "veiculo", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    
+    //Alunos que utilizam esse Onibus
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private List<Aluno> alunos;
 
     public Veiculo() {
     }
 
-    public Veiculo(String placa, int qtdeAssentos, List<PontoDeParada> ponstosDeParada, List<Motorista> motoristas, List<Aluno> alunos) {
+    public Veiculo(String placa, int qtdeAssentos) {
         this.placa = placa;
         this.qtdeAssentos = qtdeAssentos;
-        this.ponstosDeParada = ponstosDeParada;
-        this.motoristas = motoristas;
-        this.alunos = alunos;
+        this.ponstosDeParada = new ArrayList<>();
+        this.motoristas = new ArrayList<>();
+        this.alunos = new ArrayList<>();
     }
 
-    public Veiculo(long id, String placa, int qtdeAssentos, List<PontoDeParada> ponstosDeParada, List<Motorista> motoristas, List<Aluno> alunos) {
+    public Veiculo(long id, String placa, int qtdeAssentos) {
         this.id = id;
         this.placa = placa;
         this.qtdeAssentos = qtdeAssentos;
-        this.ponstosDeParada = ponstosDeParada;
-        this.motoristas = motoristas;
-        this.alunos = alunos;
+        this.ponstosDeParada = new ArrayList<>();
+        this.motoristas = new ArrayList<>();
+        this.alunos = new ArrayList<>();
     }
 
     public long getId() {
@@ -103,6 +110,42 @@ public class Veiculo implements Serializable {
 
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
+    }
+
+    public boolean addPontoDeParada(PontoDeParada pontoDeParada) {
+        this.ponstosDeParada.add(pontoDeParada);
+        return true;
+    }
+
+    public boolean removePontoDeParada(PontoDeParada pontoDeParada) {
+        if (ponstosDeParada.contains(pontoDeParada)) {
+            this.ponstosDeParada.remove(pontoDeParada);
+        }
+        return true;
+    }
+
+    public boolean addMotorista(Motorista motorista) {
+        this.motoristas.add(motorista);
+        return true;
+    }
+
+    public boolean removeMotorista(Motorista motorista) {
+        if (motoristas.contains(motorista)) {
+            this.motoristas.remove(motorista);
+        }
+        return true;
+    }
+
+    public boolean addAluno(Aluno aluno) {
+        this.alunos.add(aluno);
+        return true;
+    }
+
+    public boolean removeAluno(Aluno aluno) {
+        if (alunos.contains(aluno)) {
+            this.alunos.remove(aluno);
+        }
+        return true;
     }
 
 }
